@@ -11,15 +11,15 @@ const styles = StyleSheet.create({
   },
 });
 
-const Main = () => {
+const StackMain = () => {
   const {navigate} = useNavigation();
   return (
     <View style={styles.container}>
-      <Text>Main</Text>
+      <Text>StackMain</Text>
       <TouchableOpacity
         onPress={() => {
-          console.log('go to sub!!!!');
-          navigate('Sub');
+          console.log('go to Stacksub!!!!');
+          navigate('StackSub');
         }}>
         <Text>go to sub!!!!</Text>
       </TouchableOpacity>
@@ -27,10 +27,10 @@ const Main = () => {
   );
 };
 
-const Sub = () => {
+const StackSub = () => {
   return (
     <View style={styles.container}>
-      <Text>Sub</Text>
+      <Text>StackSub</Text>
     </View>
   );
 };
@@ -41,18 +41,18 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Main"
-        component={Main}
-        options={{title: 'main title', headerTintColor: 'red'}}
+        name="StackMain"
+        component={StackMain}
+        options={{title: 'stack main title', headerTintColor: 'red'}}
       />
-      <Stack.Screen name="Sub" component={Sub} />
+      <Stack.Screen name="StackSub" component={StackSub} />
     </Stack.Navigator>
   );
 };
 
 export default function () {
   return (
-    <NavigationContainer>
+    <NavigationContainer onStateChange={(newState) => console.log(newState)}>
       <StackNavigator />
     </NavigationContainer>
   );
