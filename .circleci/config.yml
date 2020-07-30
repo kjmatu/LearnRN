@@ -31,10 +31,10 @@ jobs:
     steps:
       - setup
       - run:
-        command: ¦
-          yarn type-check
-          yarn lint
-          yarn coverage
+          command: ¦
+            yarn type-check
+            yarn lint
+            yarn coverage
       - store_artifacts:
         path: ̃/repo/coverage
 
