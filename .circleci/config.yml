@@ -32,8 +32,8 @@ jobs:
       - setup
       - run:
           command: ¦
-            yarn type-check
-            yarn lint
+            yarn type-check &&
+            yarn lint &&
             yarn coverage
       - store_artifacts:
           path: ~/repo/coverage
